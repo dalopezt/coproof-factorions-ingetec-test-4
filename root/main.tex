@@ -1,5 +1,8 @@
-**Theorem.** The set of all natural numbers equal to the sum of the factorials of their own decimal digits is exactly $\{1, 2, 145, 40585\}$. Formally, if $\sigma(n)$ denotes the function sending a natural number $n$ to $\sum_{d \,\in\, \text{digits}(n)} d!$ (where $\text{digits}(n)$ is the list of decimal digits of $n$), then
+**Theorem.** The set of natural numbers equal to their own digit factorial sum is exactly $\{1, 2, 145, 40585\}$. That is,
+$$\{n \in \mathbb{N} \mid n = \sum_{d \,\in\, \text{digits}(n)} d!\} = \{1,\, 2,\, 145,\, 40585\}.$$
 
-$$\{ n \in \mathbb{N} \mid n = \sigma(n) \} = \{1,\, 2,\, 145,\, 40585\}.$$
+*Proof.* We show the two sets are equal by mutual inclusion.
 
-*Proof.* Unsolved.
+$(\subseteq)$ Suppose $n$ satisfies $n = \sum_{d \in \text{digits}(n)} d!$. By \textbf{Upper Bound}, every such $n$ satisfies $n \leq 2540160$. Since $n$ lies in this finite range and satisfies the digit-factorial-sum condition, \textbf{Finite Verification} yields that $n \in \{1, 2, 145, 40585\}$.
+
+$(\supseteq)$ Conversely, suppose $n \in \{1, 2, 145, 40585\}$. Each of these four values satisfies $n \leq 2540160$ by direct computation. Applying \textbf{Finite Verification} in the reverse direction, we conclude that each such $n$ satisfies $n = \sum_{d \in \text{digits}(n)} d!$. $\blacksquare$
